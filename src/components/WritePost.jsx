@@ -24,17 +24,18 @@ import Role from './Role'
 
 const WritePost = ({showModal}) => {
 
-
-    const [toggleBand, SetToggleBand] = useState(true)
-    const [toggleEvent, SetToggleEvent] = useState(true)
-    const [toggleStudio, SetToggleStudio] = useState(true)
-    const [toggleJam, SetToggleJam] = useState(true)
-
     const [type, setType] = useState('band')
-
-  
+    const [genre, setGenre] = useState('')
     
+    const [vocals, setVocals] = useState(false)
+    const [guitar, setGuitar] = useState(false)
+    const [bass, setBass] = useState(false)
+    const [drums, setDrums] = useState(false)
+    const [keys, setKeys] = useState(false)
+    const [other, setOther] = useState(false)
 
+
+      
   return (
     <div className={showModal ? 'w-full z-50  absolute top-32 duration-500 ease-in-out' : 'w-full z-50  absolute top-[-100%] duration-500 ease-in-out'}>
       <div className='flex w-[95%] mx-auto border-4 border-gray-600 border-double modal-bg'>
@@ -49,14 +50,18 @@ const WritePost = ({showModal}) => {
                 <div className='flex flex-col md:flex-row justify-between w-full items-center'>   
                     <p className='text-4xl text-center basis-1/4 my-2 md:my-8'>Gig Type</p>
                         <div className='flex-col  md:justify-start md:basis-3/4 w-full'>
-                        <div className='flex gap-2 '>
-                            <div 
-                                onClick={() => setType('band')} 
-                                className={type === 'band' 
-                                    ? 'border-4 border-double text-center flex justify-center items-center flex-col border-white text-white p-1 w-20 h-20   hover:cursor-pointer' 
-                                    : 'border-4 border-double text-center flex justify-center items-center flex-col p-1 w-20 h-20  cursor-pointer text-gray-600 border-gray-600'}>
-                                <MdGroups className='' size={45}/>Band
-                            </div>
+                        <div className='flex gap-2 justify-center md:justify-start'>
+                        <div    
+                            onClick={() => setType('band')}
+                            className={type === 'band' 
+                            ? 'border-4 border-double text-center flex justify-center items-center flex-col border-white text-white p-1 w-20 h-20   hover:cursor-pointer ' 
+                            : 'border-4 border-double text-center flex justify-center items-center flex-col p-1 w-20 h-20  cursor-pointer text-gray-600 border-gray-600 '}>
+                        <div>
+                            <MdGroups  size={45}/>
+                            Band
+                        </div>
+                    </div>
+                     
                         <div    
                             onClick={() => setType('event')}
                             className={type === 'event' 
@@ -79,7 +84,7 @@ const WritePost = ({showModal}) => {
                         <MdOutlineSpeaker className='' size={45}/>Jam
                     </div>
                     </div>
-                    <p className='text-gray-400 text-sm font-light'>Choose one</p>
+
 
                     </div>
                 </div>
@@ -89,12 +94,36 @@ const WritePost = ({showModal}) => {
                 <div className="w-full flex flex-col md:flex-row justify-between items-center">
                     <p className='text-4xl text-center basis-1/4 my-2 md:my-8'>Looking For</p>
                     <div className='grid grid-cols-3 md:flex gap-1 items-center basis-3/4 '>
-                        <GiMicrophone className='text-white border-4 w-16 h-16 border-double rounded-full p-1'/>
-                        <GiGuitarHead className='text-white border-4 w-16 h-16 border-double rounded-full p-1'/>
-                        <GiGuitarBassHead className='text-white border-4 w-16 h-16 border-double rounded-full p-1'/>
-                        <GiDrumKit className='text-white border-4 w-16 h-16 border-double rounded-full p-1'/>
-                        <GiMusicalKeyboard className='text-white border-4 w-16 h-16 border-double rounded-full p-1'/>
-                        <GiBackup className='text-white border-4 w-16 h-16 border-double rounded-full p-1'/>
+                        <GiMicrophone
+                        onClick={() => setVocals(!vocals)} 
+                        className={vocals 
+                        ? 'text-white    border-4 w-16 h-16 border-double rounded-full p-1 cursor-pointer' 
+                        : 'text-gray-600 border-gray-600     border-4 w-16 h-16 border-double rounded-full p-1 cursor-pointer'} />
+                        <GiGuitarHead 
+                        onClick={() => setGuitar(!guitar)} 
+                        className={guitar 
+                        ? 'text-white    border-4 w-16 h-16 border-double rounded-full p-1 cursor-pointer' 
+                        : 'text-gray-600 border-gray-600     border-4 w-16 h-16 border-double rounded-full p-1 cursor-pointer'} />
+                        <GiGuitarBassHead 
+                        onClick={() => setBass(!bass)} 
+                        className={bass 
+                        ? 'text-white    border-4 w-16 h-16 border-double rounded-full p-1 cursor-pointer' 
+                        : 'text-gray-600 border-gray-600     border-4 w-16 h-16 border-double rounded-full p-1 cursor-pointer'} />
+                        <GiDrumKit 
+                        onClick={() => setDrums(!drums)} 
+                        className={drums 
+                        ? 'text-white    border-4 w-16 h-16 border-double rounded-full p-1 cursor-pointer' 
+                        : 'text-gray-600 border-gray-600     border-4 w-16 h-16 border-double rounded-full p-1 cursor-pointer'} />
+                        <GiMusicalKeyboard 
+                        onClick={() => setKeys(!keys)} 
+                        className={keys 
+                        ? 'text-white    border-4 w-16 h-16 border-double rounded-full p-1 cursor-pointer' 
+                        : 'text-gray-600 border-gray-600     border-4 w-16 h-16 border-double rounded-full p-1 cursor-pointer'} />
+                        <GiBackup 
+                        onClick={() => setOther(!other)} 
+                        className={other 
+                        ? 'text-white    border-4 w-16 h-16 border-double rounded-full p-1 cursor-pointer' 
+                        : 'text-gray-600 border-gray-600     border-4 w-16 h-16 border-double rounded-full p-1 cursor-pointer'} />
                     </div>
                 </div>
             </div>
@@ -102,18 +131,92 @@ const WritePost = ({showModal}) => {
             <div className="w-full flex justify-between flex-col items-center md:flex-row">
                     <p className='text-4xl text-center basis-1/4'>Genres</p>
                     <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 basis-3/4 me-4'>
-                        <Genre genre={'Blues'} />
-                        <Genre genre={'Country'} />
-                        <Genre genre={'Electronic'} />
-                        <Genre genre={'Hip-hop'} />
-                        <Genre genre={'Jazz'} />
-                        <Genre genre={'Pop'} />
-                        <Genre genre={'R&B/Soul'} />
-                        <Genre genre={'Rock'} />
-                        <Genre genre={'Punk'} />
-                        <Genre genre={'Metal'} />
-                        <Genre genre={'Folk'} />
-                        <Genre genre={'Other'} />
+                    <div    
+                        onClick={() => setGenre('blues')}
+                        className={genre === 'blues' 
+                        ? 'border-4 border-double text-center flex justify-center items-center flex-col border-white text-white p-1    hover:cursor-pointer ' 
+                        : 'border-4 border-double text-center flex justify-center items-center flex-col p-1 cursor-pointer text-gray-600 border-gray-600 '}>
+                        <p className='text-md font-med'>Blues</p>
+                    </div>
+                    <div    
+                        onClick={() => setGenre('country')}
+                        className={genre === 'country' 
+                        ? 'border-4 border-double text-center flex justify-center items-center flex-col border-white text-white p-1    hover:cursor-pointer ' 
+                        : 'border-4 border-double text-center flex justify-center items-center flex-col p-1 cursor-pointer text-gray-600 border-gray-600 '}>
+                        <p className='text-md font-med'>Country</p>
+                    </div>
+                    <div    
+                        onClick={() => setGenre('electronic')}
+                        className={genre === 'electronic' 
+                        ? 'border-4 border-double text-center flex justify-center items-center flex-col border-white text-white p-1    hover:cursor-pointer ' 
+                        : 'border-4 border-double text-center flex justify-center items-center flex-col p-1 cursor-pointer text-gray-600 border-gray-600 '}>
+                        <p className='text-md font-med'>Electronic</p>
+                    </div>
+                    <div    
+                        onClick={() => setGenre('hiphop')}
+                        className={genre === 'hiphop' 
+                        ? 'border-4 border-double text-center flex justify-center items-center flex-col border-white text-white p-1    hover:cursor-pointer ' 
+                        : 'border-4 border-double text-center flex justify-center items-center flex-col p-1 cursor-pointer text-gray-600 border-gray-600 '}>
+                        <p className='text-md font-med'>Hip-hop</p>
+                    </div>
+                    <div    
+                        onClick={() => setGenre('jazz')}
+                        className={genre === 'jazz' 
+                        ? 'border-4 border-double text-center flex justify-center items-center flex-col border-white text-white p-1    hover:cursor-pointer ' 
+                        : 'border-4 border-double text-center flex justify-center items-center flex-col p-1 cursor-pointer text-gray-600 border-gray-600 '}>
+                        <p className='text-md font-med'>Jazz</p>
+                    </div>
+                    <div    
+                        onClick={() => setGenre('pop')}
+                        className={genre === 'pop' 
+                        ? 'border-4 border-double text-center flex justify-center items-center flex-col border-white text-white p-1    hover:cursor-pointer ' 
+                        : 'border-4 border-double text-center flex justify-center items-center flex-col p-1 cursor-pointer text-gray-600 border-gray-600 '}>
+                        <p className='text-md font-med'>Pop</p>
+                    </div>
+                    <div    
+                        onClick={() => setGenre('rnbs')}
+                        className={genre === 'rnbs' 
+                        ? 'border-4 border-double text-center flex justify-center items-center flex-col border-white text-white p-1    hover:cursor-pointer ' 
+                        : 'border-4 border-double text-center flex justify-center items-center flex-col p-1 cursor-pointer text-gray-600 border-gray-600 '}>
+                        <p className='text-md font-med'>R&B/Soul</p>
+                    </div>
+                    <div    
+                        onClick={() => setGenre('rock')}
+                        className={genre === 'rock' 
+                        ? 'border-4 border-double text-center flex justify-center items-center flex-col border-white text-white p-1    hover:cursor-pointer ' 
+                        : 'border-4 border-double text-center flex justify-center items-center flex-col p-1 cursor-pointer text-gray-600 border-gray-600 '}>
+                        <p className='text-md font-med'>Rock</p>
+                    </div>
+                    <div    
+                        onClick={() => setGenre('alt')}
+                        className={genre === 'alt' 
+                        ? 'border-4 border-double text-center flex justify-center items-center flex-col border-white text-white p-1    hover:cursor-pointer ' 
+                        : 'border-4 border-double text-center flex justify-center items-center flex-col p-1 cursor-pointer text-gray-600 border-gray-600 '}>
+                        <p className='text-md font-med'>Alt/Punk</p>
+                    </div>
+                    <div    
+                        onClick={() => setGenre('metal')}
+                        className={genre === 'metal' 
+                        ? 'border-4 border-double text-center flex justify-center items-center flex-col border-white text-white p-1    hover:cursor-pointer ' 
+                        : 'border-4 border-double text-center flex justify-center items-center flex-col p-1 cursor-pointer text-gray-600 border-gray-600 '}>
+                        <p className='text-md font-med'>Metal</p>
+                    </div>
+                    <div    
+                        onClick={() => setGenre('folk')}
+                        className={genre === 'folk' 
+                        ? 'border-4 border-double text-center flex justify-center items-center flex-col border-white text-white p-1    hover:cursor-pointer ' 
+                        : 'border-4 border-double text-center flex justify-center items-center flex-col p-1 cursor-pointer text-gray-600 border-gray-600 '}>
+                        <p className='text-md font-med'>Folk</p>
+                    </div>
+                    <div    
+                        onClick={() => setGenre('other')}
+                        className={genre === 'other' 
+                        ? 'border-4 border-double text-center flex justify-center items-center flex-col border-white text-white p-1    hover:cursor-pointer ' 
+                        : 'border-4 border-double text-center flex justify-center items-center flex-col p-1 cursor-pointer text-gray-600 border-gray-600 '}>
+                        <p className='text-md font-med'>Other</p>
+                    </div>
+        
+      
                     </div>
                 </div>
             </div>
@@ -159,3 +262,12 @@ const WritePost = ({showModal}) => {
 }
 
 export default WritePost
+
+
+          {/* <div className={type === 'band' ? 'block duration-300 ' : 'hidden duration-300'}>
+                                    <ul className=''>
+                                        <li>Band</li>
+                                        <li>Band</li>
+                                        <li>Band</li>
+                                    </ul>
+                                </div> */}
