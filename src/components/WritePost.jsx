@@ -37,7 +37,7 @@ const WritePost = ({showModal}) => {
 
       
   return (
-    <div className={showModal ? 'w-full z-50  absolute top-32 duration-500 ease-in-out' : 'w-full z-50  absolute top-[-100%] duration-500 ease-in-out'}>
+    <div className={showModal ? 'w-full z-40  absolute top-32 duration-500 ease-in-out' : 'w-full z-50  absolute top-[-100%] duration-500 ease-in-out'}>
       <div className='flex w-[95%] mx-auto border-4 border-gray-600 border-double modal-bg'>
         <div className='w-full'>
             <div className='flex items-center my-4'>
@@ -48,7 +48,7 @@ const WritePost = ({showModal}) => {
             </div>
             <div className='flex items-center my-4'>
                 <div className='flex flex-col md:flex-row justify-between w-full items-center'>   
-                    <p className='text-4xl text-center basis-1/4 my-2 md:my-8'>Gig Type</p>
+                    <p className='text-4xl text-center basis-1/4 my-4 md:my-8'>Gig Type</p>
                         <div className='flex-col  md:justify-start md:basis-3/4 w-full'>
                         <div className='flex gap-2 justify-center md:justify-start'>
                         <div    
@@ -92,7 +92,7 @@ const WritePost = ({showModal}) => {
             </div>
             <div className='flex items-center my-4'>
                 <div className="w-full flex flex-col md:flex-row justify-between items-center">
-                    <p className='text-4xl text-center basis-1/4 my-2 md:my-8'>Looking For</p>
+                    <p className='text-4xl text-center basis-1/4 my-4 md:my-8'>Looking For</p>
                     <div className='grid grid-cols-3 md:flex gap-1 items-center basis-3/4 '>
                         <GiMicrophone
                         onClick={() => setVocals(!vocals)} 
@@ -129,7 +129,7 @@ const WritePost = ({showModal}) => {
             </div>
             <div className='flex  items-center my-4'>
             <div className="w-full flex justify-between flex-col items-center md:flex-row">
-                    <p className='text-4xl text-center basis-1/4'>Genres</p>
+                    <p className='text-4xl text-center my-4 basis-1/4'>Genres</p>
                     <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 basis-3/4 me-4'>
                     <div    
                         onClick={() => setGenre('blues')}
@@ -222,7 +222,7 @@ const WritePost = ({showModal}) => {
             </div>
             <div className='flex items-center my-4'>
             <div className="w-full flex flex-col md:flex-row my-4 justify-between items-center">
-                <p className='text-4xl text-center basis-1/4'>Location</p>
+                <p className='text-4xl text-center my-4 basis-1/4'>Location</p>
                     <div className='flex items-center basis-3/4'>
                         <div className='flex gap-2 flex-col md:flex-row'>
                             <p className='text-[24px]'>City</p>
@@ -236,22 +236,22 @@ const WritePost = ({showModal}) => {
                 </div>
             </div>
             <div className='flex flex-col md:flex-row items-center my-4'>
-            <p className='text-4xl md:basis-1/4 text-center'>Message</p>
+            <p className='text-4xl md:basis-1/4 my-4 text-center'>Message</p>
                 <textarea rows={12} cols={40} className='bg-transparent border-2 border-gray-600 md:basis-3/4 me-2'/>
 
             </div>
 
             <div className='flex w-full my-4'>
-            <div className='flex w-full justify-between'>
-                <p className='text-4xl basis-1/4 text-center'>Email</p>
-                <input maxLength={30} className='bg-transparent me-2 border-2 w-72 border-gray-600 basis-3/4'/>
+            <div className='flex flex-col md:flex-row w-full justify-between'>
+                <p className='text-4xl basis-1/4 text-center my-4'>Email</p>
+                <input maxLength={30} className='mx-auto md:me-2 bg-transparent  border-2 w-72 border-gray-600 basis-3/4'/>
             </div>
         </div>
 
         <div className='flex w-full my-4'>
-            <div className='flex w-full justify-between mx-2 ms-8 gap-5'>
-                <button className='basis-2/3'>POST</button>
-                <button onClick={() => showModal = false} className='basis-1/3'>CANCEL</button>
+            <div className='flex w-full justify-between mx-2 ms-8 gap-5 mt-8'>
+                <button className='w-[90%]'>POST</button>
+
      
             </div>
         </div>

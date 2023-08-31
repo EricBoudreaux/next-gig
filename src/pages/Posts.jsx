@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 
 import { LuChevronsUpDown } from 'react-icons/lu'
 import { FiChevronDown } from 'react-icons/fi'
+import { RiCloseCircleLine } from 'react-icons/ri'
 import Post from '../components/Post'
 import WritePost from '../components/WritePost'
 
@@ -23,6 +24,7 @@ const showModal = () => {
       
       <div className='w-full  h-full'>
         <div className='mx-12'>
+          <RiCloseCircleLine onClick={() => setPostModal(!postModal)} className={!postModal ? 'hidden' : 'block absolute top-36 left-8 md:left-12 z-50'} size={50}/>
           <button onClick={() => setPostModal(!postModal)} className='mt-32 w-full uppercase'>Write a post</button>
         </div>
         {postModal ? <WritePost showModal={showModal} /> : null}
