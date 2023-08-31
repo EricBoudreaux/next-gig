@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 
-import BgImage from '../assets/Crowd_1.jpeg'
+// import BgImage from '../assets/Crowd_1.jpeg'
 
 const About = () => {
   return (
@@ -10,7 +10,7 @@ const About = () => {
     
     <div className='w-full h-full absolute top-0 bg-black'>
     </div>
-    <img  className='w-full z-0 bg-fixed absolute top-0' src={BgImage} />
+    <img  className='w-full z-0 bg-fixed absolute top-0'  />
 
     </div>
   )
