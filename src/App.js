@@ -9,6 +9,10 @@ import Landing from '../src/pages/Landing'
 import About from '../src/pages/About'
 import Posts from '../src/pages/Posts'
 import Resources from '../src/pages/Resources'
+import WritePost from './pages/WritePost';
+
+
+
 
 
 function App() {
@@ -26,8 +30,8 @@ function App() {
       <Routes>
         
           <Route path='/' element={<Landing />} />
-          
           <Route path='/posts' element={<Posts />} />
+          <Route path='/writePost' element={<WritePost />} />
   
         </Routes> 
 

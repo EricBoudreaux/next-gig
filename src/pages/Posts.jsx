@@ -1,22 +1,23 @@
 import React, { useState } from 'react'
 
+
+import { Link } from 'react-router-dom'
+
+
+
 import Navbar from '../components/Navbar'
 
 import { LuChevronsUpDown } from 'react-icons/lu'
 import { FiChevronDown } from 'react-icons/fi'
-import { RiCloseCircleLine } from 'react-icons/ri'
+
 import Post from '../components/Post'
-import WritePost from '../components/WritePost'
+  
 
 
 const Posts = () => {
 
 
-const [postModal, setPostModal] = useState(false)
 
-const showModal = () => {
-  setPostModal(!postModal);
-}
 
   return (
     <div className='text-white bg-1 bg-no-repeat bg-cover bg-center bg-fixed'>
@@ -24,10 +25,17 @@ const showModal = () => {
       
       <div className='w-full  h-full'>
         <div className='mx-12'>
-          <RiCloseCircleLine onClick={() => setPostModal(!postModal)} className={!postModal ? 'hidden' : 'block absolute top-36 left-8 md:left-12 z-50'} size={50}/>
-          <button onClick={() => setPostModal(!postModal)} className='mt-32 w-full uppercase'>Write a post</button>
+
+          <Link  className='z-50 text-white' to='/writePost'>
+            <button className='mt-32 w-full uppercase'>Write a post</button>
+          </Link>
+
         </div>
-        {postModal ? <WritePost showModal={showModal} /> : null}
+        
+
+
+
+    
         <div className='grid grid-cols-5 px-6 py-6 items-center'>
           <div className='flex mx-auto'>Title<LuChevronsUpDown className='text-[var(--red)] ml-1' size={18} /></div>
           <div className='flex justify-center md:ml-8 lg:ml-16'>Gig Type<LuChevronsUpDown className='text-[var(--red)] ml-1' size={18} /></div>
