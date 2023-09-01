@@ -56,13 +56,18 @@ const Posts = () => {
           <Post 
             title={'Looking for guitarist'} 
             gigType={'Band'} 
+            roleNum={1}
+            roleNeed1={'guitar'}
             genre={'Jazz'} 
             location={'Portland, OR'}
           />
 
           <Post 
             title={'Need a bassist ASAP'} 
-            gigType={'Event'} 
+            gigType={'Event'}
+            roleNum={2}
+            roleNeed1={'bass'}
+            roleNeed2={'vocals'} 
             genre={'Metal'} 
             location={'Canby, OR'}
           />
@@ -70,6 +75,10 @@ const Posts = () => {
           <Post 
             title={'Need help in the studio'} 
             gigType={'Studio'} 
+            roleNum={3}
+            roleNeed1={'drums'}
+            roleNeed2={'vocals'}
+            roleNeed3={'other'}
             genre={'Soul'} 
             location={'Seattle, WA'}
           />
@@ -77,14 +86,21 @@ const Posts = () => {
           <Post 
             title={'Looking for fun jams'} 
             gigType={'Jam'} 
+            roleNum={4}
+            roleNeed1={'guitar'}
+            roleNeed2={'vocals'}
+            roleNeed3={'drums'}
+            roleNeed4={'bass'}
             genre={'Rock'} 
             location={'Portland, OR'}
           />
 
 
-<Post 
+          <Post 
             title={'Looking for guitarist'} 
-            gigType={'Band'} 
+            gigType={'Band'}
+            roleNum={1}
+            roleNeed1={'guitar'}
             genre={'Jazz'} 
             location={'Portland, OR'}
           />
@@ -92,13 +108,21 @@ const Posts = () => {
           <Post 
             title={'Need a bassist ASAP'} 
             gigType={'Event'} 
+            roleNum={1}
+            roleNeed1={'bass'}
             genre={'Metal'} 
             location={'Canby, OR'}
           />
 
           <Post 
             title={'Need help in the studio'} 
-            gigType={'Studio'} 
+            gigType={'Studio'}
+            roleNum={5}
+            roleNeed1={'vocals'}
+            roleNeed2={'drums'}
+            roleNeed3={'guitar'}
+            roleNeed4={'bass'} 
+            roleNeed5={'other'} 
             genre={'Soul'} 
             location={'Seattle, WA'}
           />
@@ -106,6 +130,13 @@ const Posts = () => {
           <Post 
             title={'Looking for fun jams'} 
             gigType={'Jam'} 
+            roleNum={6}
+            roleNeed1={'vocals'}
+            roleNeed2={'guitar'}
+            roleNeed3={'bass'}
+            roleNeed4={'drums'}
+            roleNeed5={'keys'}
+            roleNeed6={'other'}
             genre={'Rock'} 
             location={'Portland, OR'}
           />
