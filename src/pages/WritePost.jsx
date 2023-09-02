@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+
 import { 
     GiGuitarHead,
     GiGuitarBassHead,
@@ -41,8 +42,8 @@ const WritePost = () => {
             <div className='w-[90%] mx-auto pt-20'>
             <div className='flex items-center my-4 '>
                 <div className='flex flex-col md:flex-row  justify-between w-full mt-12'>
-                    <p className='text-4xl basis-1/4 text-center my-4 text-white'>Title</p>
-                    <input maxLength={30} className='ps-2 bg-transparent my-4 md:me-2 border-2 mx-auto w-72 border-gray-600 basis-3/4'/>
+                <p className='text-4xl basis-1/4 text-center my-4 text-white'>Email</p>
+                <input maxLength={30} className='ps-2 bg-transparent my-4 md:me-2 border-2 mx-auto w-72 border-gray-600 basis-3/4'/>
                 </div>
             </div>
             <div className='flex items-center my-4'>
@@ -241,10 +242,7 @@ const WritePost = () => {
             </div>
 
             <div className='flex w-full my-4'>
-            <div className='flex flex-col md:flex-row w-full justify-between'>
-                <p className='text-4xl basis-1/4 text-center my-4 text-white'>Email</p>
-                <input maxLength={30} className='ps-2 bg-transparent my-4 md:me-2 border-2 mx-auto w-72 border-gray-600 basis-3/4'/>
-            </div>
+
         </div>
 
         <div className='flex w-full my-4'>

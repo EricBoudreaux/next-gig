@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 import { Link } from 'react-router-dom'
 
-
+import 'animate.css';
 
 import Navbar from '../components/Navbar'
 
@@ -32,16 +32,13 @@ const Posts = () => {
 
         </div>
         
-
-
-
     
-        <div className='grid grid-cols-5 px-6 py-6 items-center'>
-          <div className='flex mx-auto'>Title<LuChevronsUpDown className='text-[var(--red)] ml-1' size={18} /></div>
-          <div className='flex justify-center md:ml-8 lg:ml-16'>Gig Type<LuChevronsUpDown className='text-[var(--red)] ml-1' size={18} /></div>
-          <div className='flex mx-auto'>Needs<LuChevronsUpDown className='text-[var(--red)] ml-1' size={18} /></div>
-          <div className='flex justify-center md:mr-4'>Genre<LuChevronsUpDown className='text-[var(--red)] ml-1' size={18} /></div>
-          <div className='flex justify-center md:mr-12'>Location<LuChevronsUpDown className='text-[var(--red)] ml-1' size={18} /></div>
+        <div className='grid grid-cols-5 mx-12 py-6 items-center'>
+          <div className='flex justify-center items-center pl-1'>Gig Type<LuChevronsUpDown className='text-[var(--red)] ml-1' size={18} /></div>
+          <div className='flex items-center justify-center'>Needs<LuChevronsUpDown className='text-[var(--red)] ml-1' size={18} /></div>
+          <div className='flex justify-center items-center'>Genre<LuChevronsUpDown className='text-[var(--red)] ml-1' size={18} /></div>
+          <div className='flex justify-center items-center'>Location<LuChevronsUpDown className='text-[var(--red)] ml-1' size={18} /></div>
+          <div className='flex justify-center items-center'>Date<LuChevronsUpDown className='text-[var(--red)] ml-1' size={18} /></div>
           {/* <div className='flex z-40 items-center mx-auto'>
             <button className='flex w-28 justify-center'>
               <p className='text-sm'>Sort By</p>
@@ -49,31 +46,31 @@ const Posts = () => {
             </button>
           </div> */}
         </div>
-        <div className='mx-4 md:mx-12'>
+        <div className='mx-4 md:mx-12 animate__animated animate__slideInUp'>
 
         {/* title, gigType, roleNeed, genre, location */}
 
           <Post 
-            title={'Looking for guitarist'} 
+
             gigType={'Band'} 
             roleNum={1}
             roleNeed1={'guitar'}
             genre={'Jazz'} 
             location={'Portland, OR'}
+            date={'Today'}
           />
 
           <Post 
-            title={'Need a bassist ASAP'} 
             gigType={'Event'}
             roleNum={2}
             roleNeed1={'bass'}
             roleNeed2={'vocals'} 
             genre={'Metal'} 
             location={'Canby, OR'}
+            date={'Today'}
           />
 
           <Post 
-            title={'Need help in the studio'} 
             gigType={'Studio'} 
             roleNum={3}
             roleNeed1={'drums'}
@@ -81,10 +78,10 @@ const Posts = () => {
             roleNeed3={'other'}
             genre={'Soul'} 
             location={'Seattle, WA'}
+            date={'1 Day Ago'}
           />
 
           <Post 
-            title={'Looking for fun jams'} 
             gigType={'Jam'} 
             roleNum={4}
             roleNeed1={'guitar'}
@@ -93,29 +90,29 @@ const Posts = () => {
             roleNeed4={'bass'}
             genre={'Rock'} 
             location={'Portland, OR'}
+            date={'1 Day Ago'}
           />
 
 
           <Post 
-            title={'Looking for guitarist'} 
             gigType={'Band'}
             roleNum={1}
             roleNeed1={'guitar'}
             genre={'Jazz'} 
             location={'Portland, OR'}
+            date={'2 Days Ago'}
           />
 
           <Post 
-            title={'Need a bassist ASAP'} 
             gigType={'Event'} 
             roleNum={1}
             roleNeed1={'bass'}
             genre={'Metal'} 
             location={'Canby, OR'}
+            date={'2 Days Ago'}
           />
 
           <Post 
-            title={'Need help in the studio'} 
             gigType={'Studio'}
             roleNum={5}
             roleNeed1={'vocals'}
@@ -125,10 +122,10 @@ const Posts = () => {
             roleNeed5={'other'} 
             genre={'Soul'} 
             location={'Seattle, WA'}
+            date={'3 Days Ago'}
           />
 
           <Post 
-            title={'Looking for fun jams'} 
             gigType={'Jam'} 
             roleNum={6}
             roleNeed1={'vocals'}
@@ -139,6 +136,7 @@ const Posts = () => {
             roleNeed6={'other'}
             genre={'Rock'} 
             location={'Portland, OR'}
+            date={'1 Week ago'}
           />
           
 
